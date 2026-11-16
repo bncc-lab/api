@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "Se usar esta ferramenta, cite-a com os dados abaixo."
+title: "BNCC Verifica: verificação da atribuição de códigos da BNCC"
+abstract: "Verifica se o código da BNCC atribuído a uma questão é o da habilidade pedida, e não apenas um código válido. Detecta o erro invisível: um código que existe e é do componente e ano certos, mas de outra habilidade."
+type: software
+version: "0.1.0"
+authors:
+  - family-names: "Silva"
+    given-names: "Joyce Beatriz Ferreira da"
+    affiliation: "Instituto de Informática, Universidade Federal de Goiás"
+  - family-names: "Barbosa"
+    given-names: "Jacson Rodrigues"
+    affiliation: "Instituto de Informática, Universidade Federal de Goiás"
+  - family-names: "Silva"
+    given-names: "Fabiane Fernandes da"
+  - family-names: "Mendes"
+    given-names: "Danylo Bezerra"
+repository-code: "https://github.com/bncc-lab/api"
+url: "https://github.com/bncc-lab"
+license: MIT
+keywords:
+  - BNCC
+  - modelos de linguagem
+  - educação
+  - currículo
+  - verificação
+references:
+  - type: conference-paper
+    title: "Modelos mais precisos, erros menos detectáveis: limites da validação automática de códigos da BNCC"
+    authors:
+      - family-names: "Silva"
+        given-names: "Joyce Beatriz Ferreira da"
+      - family-names: "Barbosa"
+        given-names: "Jacson Rodrigues"
+      - family-names: "Silva"
+        given-names: "Fabiane Fernandes da"
+      - family-names: "Mendes"
+        given-names: "Danylo Bezerra"
+    collection-title: "Anais da XIV Escola Regional de Informática de Goiás (ERI-GO)"
+    publisher:
+      name: "Sociedade Brasileira de Computação"
+    year: 2026

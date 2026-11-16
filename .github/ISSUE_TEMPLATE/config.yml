@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Pesquisa e dados do estudo (bncc-lab)
+    url: https://github.com/bncc-lab/bncc-lab/issues
+    about: Dúvidas sobre o artigo, os registros ou os números do estudo vão para o repositório da pesquisa.

@@ -1,0 +1,46 @@
+name: Código ou texto da BNCC errado
+description: A ferramenta mostra um código, texto, componente ou ano que não confere com o documento oficial.
+title: "[BNCC] "
+labels: ["dados-bncc"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigada por avisar! Vale sempre o documento oficial do MEC.
+        O campo `pagina_pdf` de cada habilidade indica onde ela está no PDF.
+  - type: input
+    id: codigo
+    attributes:
+      label: Código
+      placeholder: EF09MA21
+    validations:
+      required: true
+  - type: dropdown
+    id: onde
+    attributes:
+      label: Onde você viu o problema
+      options:
+        - Página no navegador
+        - API web
+        - Biblioteca Python
+        - Arquivo de dados (bncc_codigos.json)
+    validations:
+      required: true
+  - type: textarea
+    id: atual
+    attributes:
+      label: O que a ferramenta mostra
+    validations:
+      required: true
+  - type: textarea
+    id: correto
+    attributes:
+      label: O que deveria mostrar
+    validations:
+      required: true
+  - type: input
+    id: fonte
+    attributes:
+      label: Fonte oficial
+      description: Página do documento da BNCC que confirma a correção.
+      placeholder: BNCC, versão final homologada (2018), página 317

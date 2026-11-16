@@ -1,0 +1,22 @@
+name: Sugerir melhoria
+description: Uma ideia para a página, a API, a biblioteca ou a documentação.
+title: "[Sugestão] "
+labels: ["melhoria"]
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Qual problema a sugestão resolve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposta
+    attributes:
+      label: O que você propõe
+      description: Se puder, inclua um exemplo de entrada e da saída esperada.
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Exemplos ou referências
