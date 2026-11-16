@@ -1,0 +1,10 @@
+.venv
+.git
+.pytest_cache
+**/__pycache__
+.vercel
+fontes_mec
+tests
+docs
+data
+scripts
