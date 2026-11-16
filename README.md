@@ -7,10 +7,9 @@ Confere se o código da BNCC que a IA colocou na questão é o da habilidade que
 
 [![Licença: MIT](https://img.shields.io/badge/licença-MIT-yellow)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776ab?logo=python&logoColor=white)](pyproject.toml)
-[![Testes](https://img.shields.io/badge/testes-20_passando-607829)](tests/)
 [![Pesquisa](https://img.shields.io/badge/pesquisa-ERI--GO_2026-0153b3)](https://github.com/bncc-lab/bncc-lab)
 
-[Página](https://bncc-lab.github.io/api/) · [API](#2-api) · [Python](#3-python) · [Pesquisa](https://github.com/bncc-lab/bncc-lab)
+[Página](https://bncc-lab.github.io/api/) · [API no ar](https://bncc-verifica.vercel.app/docs) · [Hugging Face](https://huggingface.co/spaces/Joycebeatriz/bncc-verifica) · [Python](#3-python) · [Pesquisa](https://github.com/bncc-lab/bncc-lab)
 
 <img src="docs/capturas/topo.png" alt="Página do BNCC Verifica" width="860">
 
@@ -58,7 +57,7 @@ curl -X POST https://bncc-verifica.vercel.app/verificar \
 | `GET /habilidade/{código}` | texto oficial, componente e ano |
 | `GET /saude` | estado do serviço |
 
-Funciona em qualquer site ou linguagem (CORS aberto). Documentação interativa em `/docs`.
+Funciona em qualquer site ou linguagem (CORS aberto). Gratuita e sem cadastro, em **https://bncc-verifica.vercel.app**, com documentação interativa em [/docs](https://bncc-verifica.vercel.app/docs).
 
 <img src="docs/capturas/api.png" alt="Console da API na página" width="860">
 
@@ -89,7 +88,7 @@ Cada código passa por 4 checagens: **formato → existência → ano e componen
 
 <img src="docs/capturas/pesquisa.png" alt="Painel com os dados da pesquisa" width="860">
 
-7 modelos de IA · 4.220 pedidos · 25.621 questões · 5.170 erros invisíveis. Dados, código e registros em [bncc-lab/bncc-lab](https://github.com/bncc-lab/bncc-lab).
+O BNCC Verifica nasceu do artigo "Avaliação de verificadores estruturais na atribuição de códigos da BNCC por modelos de linguagem" (ERI-GO 2026). Dados, código e registros em [bncc-lab/bncc-lab](https://github.com/bncc-lab/bncc-lab).
 
 ## Para desenvolver
 
@@ -100,17 +99,7 @@ make api        # http://127.0.0.1:8000/docs
 make pagina     # http://127.0.0.1:8080
 ```
 
-```
-api/             API web (FastAPI)
-bncc_verifica/   pacote Python: verificador e catálogo
-data/            catálogo oficial (fonte única)
-docs/            página (GitHub Pages) e capturas de tela
-scripts/         extração dos códigos do PDF do MEC
-tests/           testes
-deploy/          configuração do Hugging Face
-```
-
-Mais: [publicar](DEPLOY.md) · [design system](DESIGN.md) · [contribuir](CONTRIBUTING.md)
+Mais: [publicação e endereços](DEPLOY.md) · [design system](DESIGN.md) · [contribuir](CONTRIBUTING.md)
 
 ## Dados da BNCC
 
@@ -131,4 +120,3 @@ Mais: [publicar](DEPLOY.md) · [design system](DESIGN.md) · [contribuir](CONTRI
 - **Licença:** código em [MIT](LICENSE). Os textos da BNCC são do MEC.
 - **Autores:** Joyce Beatriz Ferreira da Costa Silva e Jacson Rodrigues Barbosa (Instituto de Informática, UFG), Fabiane Fernandes da Silva e Danylo Bezerra Mendes (UFT).
 
-<sub>*In English: BNCC Verifica checks whether the BNCC curriculum code an AI attached to a question is the code of the requested skill, catching the "invisible error" (a real code from the right subject and grade, but for another skill). Free page, web API and Python package.*</sub>
