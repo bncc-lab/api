@@ -7,3 +7,7 @@ tests
 docs
 data
 scripts
+pyproject.toml
+Makefile
+conftest.py
+deploy
