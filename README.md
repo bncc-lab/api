@@ -44,7 +44,7 @@ Escolha a habilidade, cole a resposta da IA e confira. Tudo roda no navegador.
 ### 2. API
 
 ```bash
-curl -X POST https://ENDERECO-DA-API/verificar \
+curl -X POST https://bncc-verifica.vercel.app/verificar \
      -H "Content-Type: application/json" \
      -d '{"codigo": "EF09MA20", "alvo": "EF09MA21"}'
 # "nivel": "fvp"  (erro invisível)

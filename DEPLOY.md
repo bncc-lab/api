@@ -49,4 +49,4 @@ O `Dockerfile` foi testado localmente (`docker build` e chamada a `/verificar`).
 
 - [ ] `.venv/bin/python -m pytest -q` passando
 - [ ] Nome final definido (repositório, Space, projeto Vercel)
-- [ ] Endereço público da API no README (trocar `ENDERECO-DA-API`) e na página (`API_PUBLICA` em `docs/assets/app.js`)
+- [ ] Endereço público da API no README (já em `https://bncc-verifica.vercel.app`)

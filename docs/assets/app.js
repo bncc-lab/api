@@ -310,7 +310,7 @@ function executar() {
 
 // Integração
 const LOCAL = ["127.0.0.1", "localhost"].includes(location.hostname);
-const API_PUBLICA = "";   // endereço da API publicada (Vercel). Vazio enquanto não estiver no ar.
+const API_PUBLICA = "https://bncc-verifica.vercel.app";   // API publicada na Vercel
 const API = LOCAL ? "http://127.0.0.1:8000" : API_PUBLICA;
 const API_TXT = API || "https://endereço-da-api";
 const CODS = {
