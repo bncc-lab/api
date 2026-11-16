@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>BNCC Verifica</title>
+<meta name="description" content="API aberta que confere se os códigos da BNCC colocados pela IA nas questões são os da habilidade pedida, e corrige em um clique.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect x='3' y='3' width='34' height='34' rx='10' fill='%23fecf02' transform='rotate%28-6 20 20%29'/%3E%3Cpath d='M11.5 21c2.4 1.4 4.6 3.8 6.3 6.6 3.6-7.6 8.1-13 13.6-17.2' stroke='%230153b3' stroke-width='3.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/ds.css?v=45">
+<link rel="stylesheet" href="assets/site.css?v=45">
+<link rel="stylesheet" href="assets/graficos.css?v=45">
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo-marca" viewBox="0 0 40 40"><rect x="3" y="3" width="34" height="34" rx="10" fill="#fecf02" transform="rotate(-6 20 20)"/><path d="M11.5 21c2.4 1.4 4.6 3.8 6.3 6.6 3.6-7.6 8.1-13 13.6-17.2" stroke="#0153b3" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="marca-certo" viewBox="0 0 32 32"><path d="M5 17.5c2.5 1.6 5 4.3 7 7.5 4-8.5 9-14.5 15-19" stroke="#607829" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="marca-errado" viewBox="0 0 32 32"><path d="M7 7.5c6 5 12 11 18.5 17.5M24.5 6.5C18 13 12.5 19 7.5 25.5" stroke="#b81817" stroke-width="3.4" fill="none" stroke-linecap="round"/></symbol>
+    <symbol id="marca-atencao" viewBox="0 0 32 32"><path d="M16 5.5v13.5" stroke="#6b5300" stroke-width="3.6" stroke-linecap="round"/><circle cx="16" cy="25.5" r="2.4" fill="#6b5300"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="container">
+    <a class="logo" href="#"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#logo-marca"/></svg>BNCC Verifica</a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#problema">O erro invisível</a>
+      <a href="#verificar">Conferir</a>
+      <a href="#dados">Pesquisa</a>
+      <a href="#api">API</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <a class="btn pri peq" href="#api">Usar a API <span class="seta">→</span></a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- 1. Topo -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__texto">
+        <span class="tag">Gratuito · aberto · sem cadastro</span>
+        <h1>A habilidade certa <span class="marca-texto">em cada questão.</span></h1>
+        <p class="lead">Cole as questões que a IA gerou e veja, em segundos, se cada código da BNCC é o da habilidade que você pediu.</p>
+        <div class="acoes">
+          <a class="btn pri" href="#verificar">Conferir minhas questões <span class="seta">→</span></a>
+          <a class="btn" href="#api">Usar a API</a>
+        </div>
+        <p class="hero__nota"><b>Nada é enviado:</b> na página, a conferência acontece no seu navegador.</p>
+      </div>
+      <div class="hero__folha" aria-label="Exemplo de questões geradas por IA, já conferidas">
+        <div class="folha">
+          <div class="folha__cab">
+            <span>Pedido à IA: 4 questões de Matemática, 9º ano</span>
+            <b>Habilidade pedida: EF09MA21</b>
+          </div>
+          <ol class="folha__lista">
+            <li><svg class="marca" viewBox="0 0 32 32" aria-hidden="true"><use href="#marca-certo"/></svg><span>Que elemento de um gráfico pode enganar o leitor?</span><span class="folha__cod"><code>EF09MA21</code><small>certo</small></span></li>
+            <li class="folha__invisivel"><svg class="marca" viewBox="0 0 32 32" aria-hidden="true"><use href="#marca-atencao"/></svg><span>Qual a chance de dois eventos independentes?</span><span class="folha__cod"><code>EF09MA20</code><small>erro invisível</small></span>
+              <em class="folha__anot" aria-hidden="true"><svg viewBox="0 0 60 30"><path d="M56 6C40 4 22 10 6 22" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M4 12l2 11 11-2" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>parece certa.<br> não é!</em></li>
+            <li><svg class="marca" viewBox="0 0 32 32" aria-hidden="true"><use href="#marca-errado"/></svg><span>Resolva a equação 3x + 5 = 20.</span><span class="folha__cod"><code>EF07MA18</code><small>outro ano</small></span></li>
+            <li><svg class="marca" viewBox="0 0 32 32" aria-hidden="true"><use href="#marca-errado"/></svg><span>Pelo gráfico, quantos alunos preferem futebol?</span><span class="folha__cod"><code>EF09MA99</code><small>não existe</small></span></li>
+          </ol>
+          <div class="folha__pe"><span><b>1</b> certa · <b>2</b> erros fáceis de ver</span><span class="folha__pe-inv"><b>1</b> erro invisível</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. O problema -->
+  <section id="problema" class="section">
+    <div class="container">
+      <header class="section-head">
+        <span class="tag">O erro invisível</span>
+        <h2>Parece certa. Não é.</h2>
+        <p class="lead">O código existe, é do ano e do componente certos, mas é de <b>outra habilidade</b>. Os filtros comuns deixam passar. Chamamos isso de <b>erro invisível</b>, e é o erro mais comum dos modelos de IA mais novos.</p>
+      </header>
+      <div class="grid-3 comparar">
+        <div class="card">
+          <h3>Um catálogo da BNCC</h3>
+          <ul class="checklist">
+            <li class="sim">Diz o que é o EF09MA20</li>
+            <li class="sim">Confirma que o código existe</li>
+            <li class="nao">Não sabe qual habilidade você pediu</li>
+            <li class="nao">Aprova o EF09MA20 no lugar do EF09MA21</li>
+          </ul>
+        </div>
+        <div class="card card--emphasis">
+          <h3><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#logo-marca"/></svg>BNCC Verifica</h3>
+          <ul class="checklist">
+            <li class="sim">Compara com a habilidade pedida</li>
+            <li class="sim">Encontra o erro invisível</li>
+            <li class="sim">Diz o que fazer e corrige em um clique</li>
+            <li class="sim">Lê a resposta da IA como ela vier</li>
+          </ul>
+        </div>
+        <div class="card card--inverse">
+          <strong>96%</strong>
+          <span>dos erros do GPT-5.4-mini eram invisíveis: passavam por todos os filtros comuns.</span>
+          <a href="#dados">Ver os dados</a>
+        </div>
+      </div>
+      <div class="verificacoes">
+        <h3>Como conferimos cada código</h3>
+        <ol class="grid-4">
+          <li><b>1</b><span><strong>Formato</strong>Segue a gramática, como EF09MA21</span></li>
+          <li><b>2</b><span><strong>Existência</strong>O código existe na BNCC</span></li>
+          <li><b>3</b><span><strong>Ano e componente</strong>Os mesmos que você pediu</span></li>
+          <li class="chave"><b>4</b><span><strong>A habilidade pedida</strong>Só esta pega o erro invisível</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Conferir -->
+  <section id="verificar" class="section">
+    <div class="container">
+      <div class="professores__cab">
+        <span class="tag tag--accent">Ferramenta · sem instalar nada</span>
+        <h2>Cole, confira, corrija.</h2>
+        <ol class="passos-mini" aria-label="Como usar">
+          <li><b>1</b>Escolha a habilidade que você pediu</li>
+          <li><b>2</b>Cole o que a IA devolveu</li>
+          <li><b>3</b>Confira e corrija em um clique</li>
+        </ol>
+        <div class="alvo-linha-escolha">
+          <span class="alvo-rotulo">Habilidade pedida:</span>
+          <button id="pill" class="pill-cod vazio" type="button" aria-haspopup="dialog"><span id="pillTxt">Escolher habilidade</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+        </div>
+        <div class="anot" aria-hidden="true">
+          <img class="ilustra-anot" src="assets/ilustracoes/professora-lendo.svg" alt="">
+        </div>
+        <p id="alvoTexto" class="alvo-linha">É com ela que cada questão será comparada. Não sabe o código? Busque pelo assunto.</p>
+        <input id="alvo" type="hidden">
+      </div>
+
+      <div class="card card--emphasis entrada">
+        <div class="entrada__topo">
+          <label for="questoes">Cole a resposta da IA</label>
+          <div class="atalhos">
+            <span>Ainda não tem questões?</span>
+            <button id="btnExemplo2" class="btn peq btn-acao" type="button"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z" fill="currentColor"/></svg>Testar com um exemplo</button>
+            <button id="btnPedido" class="btn peq btn-acao" type="button"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 3.5v-.5a1.5 1.5 0 0 0-1.5-1.5H4a1.5 1.5 0 0 0-1.5 1.5v5A1.5 1.5 0 0 0 4 9.5h.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Copiar pedido para a IA</button>
+          </div>
+        </div>
+        <textarea id="questoes" class="campo" spellcheck="false" placeholder="Cole aqui tudo o que a IA respondeu. Pode ser o texto inteiro, o JSON ou só os códigos, um por linha."></textarea>
+        <div class="acoes">
+          <button id="verificar-btn" class="btn pri">Conferir <span class="seta">→</span></button>
+          <button id="limpar" class="btn">Limpar</button>
+        </div>
+      </div>
+
+      <div id="res" aria-live="polite"></div>
+
+      <details class="card card--muted glossario">
+        <summary>O que cada resultado quer dizer</summary>
+        <div class="grid-3">
+          <div class="card"><span class="badge correto">correto</span> É o código da habilidade pedida. <code>EF09MA21</code></div>
+          <div class="card"><span class="badge fvp">erro invisível</span> Parece certo: o código existe e é do mesmo ano e componente, mas é de outra habilidade. É o erro mais difícil de ver. <code>EF09MA20</code></div>
+          <div class="card"><span class="badge fora_do_dominio">outro ano ou componente</span> O código existe, mas é de outro ano ou componente. <code>EF07MA02</code></div>
+          <div class="card"><span class="badge inexistente">inexistente</span> Parece um código, mas não existe na BNCC: a IA inventou. <code>EF09MA99</code></div>
+          <div class="card"><span class="badge malformado">código mal escrito</span> Está fora do padrão dos códigos da BNCC, como um número faltando. <code>EF9MA21</code></div>
+          <div class="card"><span class="badge aprovado_sem_alvo">sem habilidade pedida</span> O código existe, mas sem a habilidade pedida não dá para saber se está certo.</div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 4. Pesquisa -->
+  <section id="dados" class="section">
+    <div class="container">
+      <header class="section-head section-head--ilustrada">
+        <img class="ilustra" src="assets/ilustracoes/leitura-concentrada.svg" alt="" aria-hidden="true">
+        <span class="tag">Pesquisa</span>
+        <h2>Quando a IA erra, quase ninguém vê.</h2>
+        <p class="lead">Fizemos 4.220 pedidos a 7 modelos de IA, que geraram 25.621 questões. Conferimos o código de cada uma. Este é o resultado.</p>
+      </header>
+      <div id="simulador" class="card card--emphasis dash" aria-label="Painel com os principais resultados do estudo"></div>
+      <p class="dados-fonte">Estudo revisado por pares, aceito no ERI-GO 2026. Método, dados e código serão publicados no GitHub do bncc-lab.</p>
+      <details class="graf-tabela-wrap">
+        <summary>Ver os números em tabela</summary>
+        <div id="grafTabela" class="graf-tabela-scroll"></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 5. API -->
+  <section id="api" class="section">
+    <div class="container">
+      <header class="section-head section-head--ilustrada">
+        <img class="ilustra" src="assets/ilustracoes/abrindo-caixa.svg" alt="" aria-hidden="true">
+        <span class="tag">Para quem desenvolve</span>
+        <h2>Integre do seu jeito.</h2>
+        <p class="lead">Coloque a conferência dentro do seu gerador de questões, da sua plataforma ou do seu agente de IA. Uma chamada HTTP, resposta em JSON, sem chave e sem cadastro.</p>
+      </header>
+      <ol class="grid-3 inicio-rapido">
+        <li><b>1</b><span><strong>Envie as questões</strong>Mande para <code>/verificar/lote</code> o JSON que a IA devolveu e o código pedido.</span></li>
+        <li><b>2</b><span><strong>Receba o diagnóstico</strong>Cada questão volta com o resultado e a explicação em português.</span></li>
+        <li><b>3</b><span><strong>Corrija na origem</strong>Use <code>/ancorar</code> para gravar o código oficial, em vez de pedir à IA.</span></li>
+      </ol>
+      <div class="dev-grid">
+        <div class="code-panel" aria-label="Console da API">
+          <div class="code-panel__bar"><span class="metodo">POST</span><span>/verificar</span><span class="console__nota">teste ao vivo</span></div>
+          <div class="console__campos">
+            <label>código que a IA colocou <input id="conCodigo" value="EF09MA20" maxlength="12" spellcheck="false"></label>
+            <label>habilidade pedida <input id="conAlvo" value="EF09MA21" maxlength="12" spellcheck="false"></label>
+            <button id="conExec" class="btn pri peq" type="button">Executar <span class="seta">→</span></button>
+          </div>
+          <pre id="conSaida" class="console__saida">// a resposta da API aparece aqui</pre>
+        </div>
+        <div class="code-panel exemplos">
+          <div class="code-panel__bar">
+            <div class="tabs abas" role="tablist">
+              <button role="tab" data-aba="curl" aria-selected="true">cURL</button>
+              <button role="tab" data-aba="python" aria-selected="false">Python</button>
+              <button role="tab" data-aba="js" aria-selected="false">JavaScript</button>
+              <button role="tab" data-aba="ia" aria-selected="false">Agentes de IA</button>
+            </div>
+            <button class="btn peq copiar" id="copiarCod" type="button">Copiar</button>
+          </div>
+          <pre id="codAba"></pre>
+        </div>
+      </div>
+      <div class="grid-2 rotas">
+        <div class="card"><code><span class="metodo">POST</span>/verificar</code><span>Confere um código contra a habilidade pedida.</span></div>
+        <div class="card"><code><span class="metodo">POST</span>/verificar/lote</code><span>Confere todas as questões que a IA devolveu, no formato em que vieram.</span></div>
+        <div class="card"><code><span class="metodo">POST</span>/ancorar</code><span>Devolve o código oficial a partir do texto da habilidade.</span></div>
+        <div class="card"><code><span class="metodo metodo--get">GET</span>/habilidade/{código}</code><span>Texto oficial, componente e ano de uma habilidade.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Dúvidas -->
+  <section id="duvidas" class="section">
+    <div class="container">
+      <header class="section-head">
+        <span class="tag">Dúvidas</span>
+        <h2>Perguntas frequentes</h2>
+        <p class="lead">O que professores e equipes mais perguntam.</p>
+      </header>
+      <div class="faq">
+        <details><summary>É grátis mesmo?</summary><p>Sim. Sem plano, sem cadastro e sem chave. O código é aberto.</p></details>
+        <details><summary>Vocês guardam as minhas questões?</summary><p>Não. Nesta página, a conferência acontece no seu navegador e nada é enviado. A API confere o que recebe e não guarda as questões.</p></details>
+        <details><summary>Ela diz se a questão é boa?</summary><p>Não. Ela confere se o código é o da habilidade que você pediu. Saber se a questão de fato avalia aquela habilidade continua sendo trabalho do olhar do professor.</p></details>
+        <details><summary>E se eu não souber o código da habilidade?</summary><p>Clique em <b>Escolher habilidade</b>, na seção Conferir. Você pode buscar pelo assunto, como “frações”, ou navegar por etapa, componente e ano.</p></details>
+        <details><summary>Funciona para todas as etapas?</summary><p>Sim: Educação Infantil, Ensino Fundamental e Ensino Médio, com as 1.580 habilidades da BNCC homologada em 2018. A BNCC Computação ainda não está incluída.</p></details>
+        <details><summary>Funciona com qualquer IA?</summary><p>Sim. A ferramenta confere o resultado, não importa de onde ele veio: ChatGPT, Gemini, Claude ou um modelo da sua plataforma.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fechamento -->
+  <section class="section fecho">
+    <div class="container">
+      <div class="card card--inverse fecho__card">
+        <h2>Agora é a sua vez de conferir.</h2>
+        <p class="fecho__lead">Grátis, aberto e sem cadastro.</p>
+        <div class="acoes">
+          <a class="btn btn--claro" href="#verificar">Conferir minhas questões <span class="seta">→</span></a>
+          <a class="btn btn--contorno" href="#api">Usar a API</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="citacao">
+      <a class="logo" href="#"><svg viewBox="0 0 40 40" aria-hidden="true"><use href="#logo-marca"/></svg>BNCC Verifica</a>
+      <p>Um projeto do <a href="https://github.com/bncc-lab"><b>bncc-lab</b></a> · Baseado em pesquisa revisada por pares · <a href="#dados">Pesquisa</a></p>
+      <p>Iniciativa independente, sem vínculo com o MEC. Os códigos e textos das habilidades reproduzem a BNCC oficial (MEC, 2018). A ferramenta confere o código; não avalia se a questão de fato mede a habilidade.</p>
+      <p>Ilustrações: <a href="https://www.opendoodles.com/">Open Doodles</a>, de Pablo Stanley.</p>
+    </div>
+    <div>
+      <h4>Produto</h4>
+      <ul>
+        <li><a href="#verificar">Conferir questões</a></li>
+        <li><button class="link-rodape" type="button" data-abrir-explorador>Encontrar uma habilidade</button></li>
+        <li><a href="#api">API</a></li>
+        <li><a href="#duvidas">Perguntas frequentes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Pesquisa</h4>
+      <ul>
+        <li><a href="#dados">O que os dados mostram</a></li>
+                <li><a href="https://github.com/bncc-lab">bncc-lab no GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<dialog id="explorador" aria-labelledby="ex-t">
+  <div class="ex">
+    <div class="ex-topo">
+      <h3 id="ex-t">Escolha a habilidade pedida <button class="fechar" id="exFechar" aria-label="Fechar">×</button></h3>
+      <p class="muted">Busque pelo assunto ou pelo código, ou navegue por etapa, componente e ano. Depois, clique na habilidade.</p>
+      <input id="exBusca" class="campo" type="search" placeholder="Ex.: frações, gráficos, plantas ou EF09MA21" autocomplete="off">
+      <div class="filtros">
+        <div class="seg" id="exEtapa" role="group" aria-label="Etapa">
+          <button data-v="" aria-pressed="true">Todas</button>
+          <button data-v="Educação Infantil" aria-pressed="false">Infantil</button>
+          <button data-v="Ensino Fundamental" aria-pressed="false">Fundamental</button>
+          <button data-v="Ensino Médio" aria-pressed="false">Médio</button>
+        </div>
+        <select id="exComp" aria-label="Componente"><option value="">Todos os componentes</option></select>
+      </div>
+      <div class="chips" id="exAno" role="group" aria-label="Ano"></div>
+    </div>
+    <div class="ex-cont" id="exCont"></div>
+    <ul class="ex-lista" id="exLista" role="listbox"></ul>
+  </div>
+</dialog>
+<div id="toast" class="toast" role="status"></div>
+<script src="assets/app.js?v=45"></script>
+<script src="assets/graficos.js?v=45"></script>
+</body>
+</html>

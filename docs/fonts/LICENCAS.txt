@@ -1,0 +1,5 @@
+Fontes incluídas nesta pasta, todas sob a SIL Open Font License 1.1 (https://openfontlicense.org):
+- Bricolage Grotesque (Mathieu Triay) · bricolagegrotesque.woff2
+- Instrument Sans (Instrument) · instrumentsans.woff2
+- Caveat (Impallari Type) · caveat.woff2
+Obtidas via Google Fonts (subconjunto latino).
