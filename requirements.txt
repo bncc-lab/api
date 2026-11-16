@@ -1,0 +1,4 @@
+# API (Hugging Face Spaces / Vercel)
+fastapi==0.163.1
+uvicorn==0.54.0
+pydantic==2.14.3

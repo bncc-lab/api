@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bncc-verifica"
+version = "0.1.0"
+description = "Verifica se o código da BNCC atribuído a uma questão é o da habilidade pedida (detecta o erro invisível)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Joyce Beatriz Ferreira da Silva" },
+    { name = "Jacson Rodrigues Barbosa" },
+    { name = "Fabiane Fernandes da Silva" },
+    { name = "Danylo Bezerra Mendes" },
+]
+keywords = ["bncc", "educação", "currículo", "llm", "verificação"]
+dependencies = []
+
+[project.optional-dependencies]
+api = ["fastapi>=0.110", "uvicorn>=0.29"]
+
+[project.urls]
+"Código" = "https://github.com/bncc-lab/api"
+"Issues" = "https://github.com/bncc-lab/api/issues"
+"Pesquisa e dados" = "https://github.com/bncc-lab/bncc-lab"
+
+[tool.setuptools]
+packages = ["bncc_verifica"]
+
+[tool.setuptools.package-data]
+bncc_verifica = ["dados/bncc_codigos.json"]

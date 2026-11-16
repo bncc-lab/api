@@ -1,0 +1,20 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.env
+
+# Vercel
+.vercel/
+
+# Sistema
+.DS_Store
+
+# PDF oficial baixado para extração (reprodutível via scripts/extrair_codigos.py)
+fontes_mec/
+
+# docs/ (página no GitHub Pages) é versionada: não ignore.
