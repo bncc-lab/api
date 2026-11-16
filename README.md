@@ -129,6 +129,6 @@ Mais: [publicar](DEPLOY.md) · [design system](DESIGN.md) · [contribuir](CONTRI
 
 - **Citar:** botão *Cite this repository* do GitHub ([CITATION.cff](CITATION.cff)).
 - **Licença:** código em [MIT](LICENSE). Os textos da BNCC são do MEC.
-- **Autores:** Joyce Beatriz Ferreira da Silva e Jacson Rodrigues Barbosa (Instituto de Informática, UFG), Fabiane Fernandes da Silva e Danylo Bezerra Mendes.
+- **Autores:** Joyce Beatriz Ferreira da Costa Silva e Jacson Rodrigues Barbosa (Instituto de Informática, UFG), Fabiane Fernandes da Silva e Danylo Bezerra Mendes (UFT).
 
 <sub>*In English: BNCC Verifica checks whether the BNCC curriculum code an AI attached to a question is the code of the requested skill, catching the "invisible error" (a real code from the right subject and grade, but for another skill). Free page, web API and Python package.*</sub>

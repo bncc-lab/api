@@ -62,8 +62,8 @@
 
   // Pesquisa: CSV e citação
   const BIB = `@inproceedings{silva2026validbutwrong,
-  title     = {Modelos mais precisos, erros menos detect{\'a}veis: limites da valida{\c{c}}{\~a}o autom{\'a}tica de c{\'o}digos da {BNCC}},
-  author    = {Silva, Joyce Beatriz Ferreira da and Barbosa, Jacson Rodrigues and Silva, Fabiane Fernandes da and Mendes, Danylo Bezerra},
+  title     = {Avalia{\c{c}}{\~a}o de verificadores estruturais na atribui{\c{c}}{\~a}o de c{\'o}digos da {BNCC} por modelos de linguagem},
+  author    = {Silva, Joyce Beatriz Ferreira da Costa and Barbosa, Jacson Rodrigues and Silva, Fabiane Fernandes da and Mendes, Danylo Bezerra},
   booktitle = {Anais da XIV Escola Regional de Inform{\'a}tica de Goi{\'a}s (ERI-GO)},
   year      = {2026},
   publisher = {Sociedade Brasileira de Computa{\c{c}}{\~a}o}

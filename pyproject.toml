@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
 authors = [
-    { name = "Joyce Beatriz Ferreira da Silva" },
+    { name = "Joyce Beatriz Ferreira da Costa Silva" },
     { name = "Jacson Rodrigues Barbosa" },
     { name = "Fabiane Fernandes da Silva" },
     { name = "Danylo Bezerra Mendes" },

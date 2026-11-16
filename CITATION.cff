@@ -6,15 +6,17 @@ type: software
 version: "0.1.0"
 authors:
   - family-names: "Silva"
-    given-names: "Joyce Beatriz Ferreira da"
+    given-names: "Joyce Beatriz Ferreira da Costa"
     affiliation: "Instituto de Informática, Universidade Federal de Goiás"
   - family-names: "Barbosa"
     given-names: "Jacson Rodrigues"
     affiliation: "Instituto de Informática, Universidade Federal de Goiás"
   - family-names: "Silva"
     given-names: "Fabiane Fernandes da"
+    affiliation: "Universidade Federal do Tocantins"
   - family-names: "Mendes"
     given-names: "Danylo Bezerra"
+    affiliation: "Universidade Federal do Tocantins"
 repository-code: "https://github.com/bncc-lab/api"
 url: "https://github.com/bncc-lab"
 license: MIT
@@ -26,16 +28,18 @@ keywords:
   - verificação
 references:
   - type: conference-paper
-    title: "Modelos mais precisos, erros menos detectáveis: limites da validação automática de códigos da BNCC"
+    title: "Avaliação de verificadores estruturais na atribuição de códigos da BNCC por modelos de linguagem"
     authors:
       - family-names: "Silva"
-        given-names: "Joyce Beatriz Ferreira da"
+        given-names: "Joyce Beatriz Ferreira da Costa"
       - family-names: "Barbosa"
         given-names: "Jacson Rodrigues"
       - family-names: "Silva"
         given-names: "Fabiane Fernandes da"
+        affiliation: "Universidade Federal do Tocantins"
       - family-names: "Mendes"
         given-names: "Danylo Bezerra"
+        affiliation: "Universidade Federal do Tocantins"
     collection-title: "Anais da XIV Escola Regional de Informática de Goiás (ERI-GO)"
     publisher:
       name: "Sociedade Brasileira de Computação"
